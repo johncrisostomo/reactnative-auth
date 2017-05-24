@@ -3,12 +3,22 @@ import { TextInput, StyleSheet } from 'react-native';
 import { Button, Card, CardSection } from './common';
 
 export default class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+    };
+  }
+
   render() {
     const { textInputStyle } = styles;
     return (
       <Card>
         <CardSection>
-          <TextInput style={textInputStyle} />
+          <TextInput
+            value={this.state.text}
+            onChangeText={text => this.setState({ text })}
+            style={textInputStyle} />
         </CardSection>
 
         <CardSection />
