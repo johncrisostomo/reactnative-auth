@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet } from 'react-native';
-import { Button, Card, CardSection } from './common';
+import { Button, Card, CardSection, Input } from './common';
 
 export default class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      email: '',
     };
   }
 
   render() {
-    const { textInputStyle } = styles;
     return (
       <Card>
         <CardSection>
-          <TextInput
-            value={this.state.text}
-            onChangeText={text => this.setState({ text })}
-            style={textInputStyle} />
+          <Input
+            placeholder={'user@gmail.com'}
+            label={'Email'}
+            value={this.state.email}
+            onChangeText={email => this.setState({ email })}
+          />
         </CardSection>
 
         <CardSection />
@@ -32,10 +32,3 @@ export default class LoginForm extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  textInputStyle: {
-    height: 20,
-    width: 100,
-  },
-});
