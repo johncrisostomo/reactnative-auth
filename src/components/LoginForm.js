@@ -6,6 +6,7 @@ export default class LoginForm extends Component {
     super(props);
     this.state = {
       email: '',
+      password: '',
     };
   }
 
@@ -21,7 +22,15 @@ export default class LoginForm extends Component {
           />
         </CardSection>
 
-        <CardSection />
+        <CardSection>
+          <Input
+            placeholder={'password'}
+            label={'Password'}
+            value={this.state.password}
+            onChangeText={password => this.setState({ password })}
+            secureTextEntry
+          />
+        </CardSection>
 
         <CardSection>
           <Button>
