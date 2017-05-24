@@ -4,6 +4,8 @@ import firebase from 'firebase';
 import { Header } from './components/common';
 import firebaseSettings from '../firebaseSettings.js';
 
+import LoginForm from './components/LoginForm';
+
 class App extends Component {
   componentWillMount() {
     firebase.initializeApp(firebaseSettings);
@@ -13,7 +15,7 @@ class App extends Component {
     return (
       <View>
         <Header headerText={"Authentication"} />
-        <Text>An App!</Text>
+        <LoginForm />
       </View>
     );
   }
